@@ -1,0 +1,17 @@
+nav{
+    margin: 1rem 1rem;
+}
+.brand{
+    font-size: 2rem;
+}
+.btnList{
+    display: flex;
+    justify-content: center;
+    margin-top: .5rem;
+}
+.btn{
+    background-color: white;
+    border: 0px;
+    font-size: 1rem;
+    cursor: pointer;
+}
