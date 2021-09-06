@@ -4,7 +4,7 @@ import './ItemListContainer.css'
 const ItemListContainer = () => {
     return(
         <div className="catalogo">
-            <p>Texto dentro del ItemListContainer Texto dentro del ItemListContainer Texto dentro del ItemListContainer</p>
+            <p>Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo Catálogo </p>
         </div>
     )
 }

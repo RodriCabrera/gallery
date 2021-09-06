@@ -1,5 +1,6 @@
 nav{
-    margin-top: 1rem;
+    padding-top: var(--nav-padding);
+    height: var(--nav-height);
 }
 .brand{
     font-size: 2rem;

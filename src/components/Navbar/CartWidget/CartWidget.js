@@ -1,11 +1,11 @@
 import React from 'react'
-import './CartWidget.css'
+import '../NavBar.css'
 import { FiShoppingCart } from 'react-icons/fi';
 
 
 const CartWidget = () => {
     return(
-        <FiShoppingCart />
+        <button className="btn"><FiShoppingCart /></button>
     )
 };
 
