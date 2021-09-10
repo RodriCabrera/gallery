@@ -1,17 +1,17 @@
 nav{
-    padding-top: var(--nav-padding);
+    padding: var(--nav-padding);
     height: var(--nav-height);
 }
 .brand{
     font-size: 2rem;
 }
-.btnList{
+.nav-btnList{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: .5rem;
 }
-.btn{
+.nav-btn{
     background-color: white;
     border: 0px;
     font-size: 1rem;

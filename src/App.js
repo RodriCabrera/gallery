@@ -1,12 +1,14 @@
 import './App.css';
 import NavBar from './components/Navbar/NavBar.js';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
-import './components/ItemListContainer/ItemListContainer.css'
+import ItemListContainer from './containers/ItemListContainer/ItemListContainer.js';
+import './containers/ItemListContainer/ItemListContainer.css'
+import Carrousel from './components/Carrousel/Carrousel';
 
 function App() {
   return (
     <div className="App">
         <NavBar />
+        <Carrousel/>
         <ItemListContainer greeting="Welcome!"/> 
     </div>
   );
