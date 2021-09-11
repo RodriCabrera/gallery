@@ -1,13 +1,8 @@
-import React from 'react'
-import "./Carrousel.css"
+import React from "react";
+import "./Carrousel.css";
 
 const Carrousel = () => {
-    return (
-        <div className="carrousel">
-           Carrousel: Banners 
-           <img src="../../art-latinamerica.png" alt="banner-img"></img>
-        </div>
-    )
-}
+	return <div className="carrousel"></div>;
+};
 
-export default Carrousel
+export default Carrousel;

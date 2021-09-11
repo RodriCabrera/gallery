@@ -2,9 +2,21 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 310px;
 	cursor: pointer;
+	text-align: left;
 }
 .card-img {
 	width: 100%;
+	height: auto;
+	object-fit: cover;
+}
+.card-title,
+.card-author {
+	transition: 500ms;
+	width: 100%;
+	text-align: left;
+}
+
+.card-title:hover {
+	color: rgb(41, 41, 41);
 }

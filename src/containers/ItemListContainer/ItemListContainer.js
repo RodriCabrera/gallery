@@ -1,29 +1,13 @@
 import React from "react";
 import "./ItemListContainer.css";
 import Card from "../../components/Card/Card";
-import { useState, useEffect } from "react";
+import Masonry from "react-masonry-css";
 
 const ItemListContainer = (props) => {
-	const [items, setItems] = useState([]);
-
-	useEffect(() => {
-		try {
-			fetch(
-				// "https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=8"
-				// "https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&culture=andes&limit=10"
-				"https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&department=Art+of+the+Americas&limit=10&indent=1"
-			)
-				.then((res) => res.json())
-				.then((result) => setItems(result.data));
-		} catch (error) {
-			console.log(error, "Falló requesto a API.");
-		}
-	}, []);
-	console.log(items);
-
 	const cardMap = () => {
-		return items.map((item) => (
+		return props.items.map((item) => (
 			<Card
+				key={item.id}
 				title={item.title}
 				author={item.culture[0]}
 				image={item.images.web.url}
@@ -31,29 +15,27 @@ const ItemListContainer = (props) => {
 		));
 	};
 
+	const breakpointColumnsObj = {
+		default: 4,
+		1000: 3,
+		800: 2,
+		450: 1,
+	};
+
 	return (
-		<div id="artworks">
-			<h2>{props.greeting}</h2>
-			<div className="itemList-wrapper">
+		<div className="artworks">
+			<Masonry
+				breakpointCols={breakpointColumnsObj}
+				className="my-masonry-grid"
+				columnClassName="my-masonry-grid_column"
+			>
 				{cardMap()}
-
-				{/* {items
-					? items.map((item) => (
-							<Card
-								title={item.title}
-								author={item.creators[0].description}
-								image={item.images.web.url}
-							/>
-					  ))
-					: "Error"} */}
-
-				{/* <Card
-					title={items[0].title}
-					author={items[0].creators[0].description}
-					image={items[0].images.web.url}
-				/> */}
-			</div>
+			</Masonry>
 		</div>
+		// <div id="artworks">
+		// 	<h2>{props.greeting}</h2>
+		// 	<div className="itemList-wrapper">{props.items && cardMap()}</div>
+		// </div>
 	);
 };
 
