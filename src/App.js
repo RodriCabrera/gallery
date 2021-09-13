@@ -2,7 +2,7 @@ import "./App.css";
 import NavBar from "./components/Navbar/NavBar.js";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer.js";
 import "./containers/ItemListContainer/ItemListContainer.css";
-import Carrousel from "./components/Carrousel/Carrousel";
+import Carousel from "./components/Carousel/Carousel";
 import { useEffect, useState } from "react";
 
 function App() {
@@ -16,14 +16,14 @@ function App() {
 				.then((res) => res.json())
 				.then((result) => setItems(result.data));
 		} catch (error) {
-			console.log(error, "Falló requesto a API.");
+			console.log(error, "Falló request a la API.");
 		}
 	}, []);
 
 	return (
 		<div className="App">
 			<NavBar />
-			<Carrousel />
+			<Carousel />
 			<ItemListContainer items={items} />
 		</div>
 	);
