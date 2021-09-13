@@ -29,13 +29,9 @@ const ItemListContainer = (props) => {
 				className="my-masonry-grid"
 				columnClassName="my-masonry-grid_column"
 			>
-				{cardMap()}
+				{props.items && cardMap()}
 			</Masonry>
 		</div>
-		// <div id="artworks">
-		// 	<h2>{props.greeting}</h2>
-		// 	<div className="itemList-wrapper">{props.items && cardMap()}</div>
-		// </div>
 	);
 };
 

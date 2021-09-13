@@ -1,7 +1,7 @@
 import React from "react";
 
-const Banner = () => {
-	return <div>{/* <img src=></img> */}</div>;
+const Banner = (props) => {
+	return <div>{props.image}</div>;
 };
 
 export default Banner;

@@ -11,8 +11,7 @@ function App() {
 	useEffect(() => {
 		try {
 			fetch(
-				// "https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&culture=andes&limit=10"
-				"https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&department=Art+of+the+Americas&limit=10&indent=1"
+				"https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&department=Art+of+the+Americas&limit=12&indent=1"
 			)
 				.then((res) => res.json())
 				.then((result) => setItems(result.data));
@@ -20,13 +19,12 @@ function App() {
 			console.log(error, "Falló requesto a API.");
 		}
 	}, []);
-	console.log(items);
 
 	return (
 		<div className="App">
 			<NavBar />
-			{/* <Carrousel /> */}
-			<ItemListContainer items={items} greeting="Welcome!" />
+			<Carrousel />
+			<ItemListContainer items={items} />
 		</div>
 	);
 }
