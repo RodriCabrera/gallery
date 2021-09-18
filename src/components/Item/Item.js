@@ -1,7 +1,8 @@
 import React from "react";
-import "./Card.css";
+import "./Item.css";
 
-const Card = (props) => {
+const Item = (props) => {
+	console.log(props.image);
 	return (
 		<div className="card">
 			<img className="card-img" src={props.image} alt="" />
@@ -11,4 +12,4 @@ const Card = (props) => {
 	);
 };
 
-export default Card;
+export default Item;

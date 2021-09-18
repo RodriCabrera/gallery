@@ -1,0 +1,15 @@
+.detail {
+	display: flex;
+	flex-direction: row;
+	width: 80%;
+	border: 1px black solid;
+}
+.detail-image {
+	width: 50%;
+}
+.detail-info {
+	padding: 10px;
+}
+.detail-info p {
+	text-align: justify;
+}

@@ -4,6 +4,7 @@
 	align-items: center;
 	cursor: pointer;
 	text-align: left;
+	border-radius: 5px;
 }
 .card-img {
 	width: 100%;

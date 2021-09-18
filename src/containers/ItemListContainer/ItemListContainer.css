@@ -1,37 +1,14 @@
 .artworks {
 	background-color: rgb(238, 238, 238);
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 }
-/*
-.itemList-wrapper {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 15px;
+.itemListContainer-title {
+	text-align: left;
+	margin-top: 35px;
+	margin-left: 16px;
 }
-
-@media (min-width: 768px) {
-	.itemList-wrapper {
-		display: grid;
-		justify-items: center;
-		grid-template-columns: repeat(2, 1fr);
-		grid-auto-rows: 10px;
-
-		grid-gap: 10px;
-		grid-auto-rows: minmax(200px, auto);
-	}
-}
-
-@media (min-width: 1024px) {
-	.itemList-wrapper {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		grid-gap: 10px;
-		grid-auto-rows: minmax(200px, auto);
-	}
-} */
-
 .my-masonry-grid {
 	display: -webkit-box; /* Not needed if autoprefixing */
 	display: -ms-flexbox; /* Not needed if autoprefixing */

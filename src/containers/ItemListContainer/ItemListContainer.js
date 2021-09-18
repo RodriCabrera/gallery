@@ -1,37 +1,30 @@
 import React from "react";
 import "./ItemListContainer.css";
-import Card from "../../components/Card/Card";
-import Masonry from "react-masonry-css";
+// import Card from "../../components/Card/Card";
+// import Masonry from "react-masonry-css";
+import { useEffect, useState } from "react";
+import ItemList from "../../components/ItemList/ItemList";
 
-const ItemListContainer = (props) => {
-	const cardMap = () => {
-		return props.items.map((item) => (
-			<Card
-				key={item.id}
-				title={item.title}
-				author={item.culture[0]}
-				image={item.images.web.url}
-			/>
-		));
-	};
+const ItemListContainer = () => {
+	const [data, setData] = useState([]);
+	const [loading, setloading] = useState(false);
 
-	const breakpointColumnsObj = {
-		default: 4,
-		1000: 3,
-		800: 2,
-		450: 1,
-	};
+	useEffect(() => {
+		setloading(true);
+		const url =
+			"https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&department=Art+of+the+Americas&limit=12&indent=1";
+		fetch(url)
+			.then((res) => res.json())
+			.then((result) => setData(result.data))
+			.catch((error) => console.log(error, "Falló request a la API."))
+			.finally(() => setloading(false));
+	}, []);
 
 	return (
-		<div className="artworks">
-			<Masonry
-				breakpointCols={breakpointColumnsObj}
-				className="my-masonry-grid"
-				columnClassName="my-masonry-grid_column"
-			>
-				{props.items && cardMap()}
-			</Masonry>
-		</div>
+		<>
+			<ItemList data={data} />
+			{loading && <h4>Loading content...</h4>}
+		</>
 	);
 };
 
