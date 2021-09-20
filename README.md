@@ -1,6 +1,7 @@
 # ART LATIN AMERICA
 
 Proyecto realizado en el marco del curso de React.js de CODERHOUSE.
+[art latin america](./src/Navbar/logo-art-transp.png)
 
 # Getting Started with Create React App
 
