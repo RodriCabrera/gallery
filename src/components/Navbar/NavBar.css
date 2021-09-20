@@ -2,7 +2,7 @@ nav {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	padding: 15px;
+	padding: 0.5rem;
 	border-top: orangered 2px solid;
 }
 a {
