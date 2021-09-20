@@ -1,13 +1,18 @@
 import React from "react";
 import "./Item.css";
+import { Link } from "react-router-dom";
 
 const Item = (props) => {
-	console.log(props.image);
 	return (
 		<div className="card">
-			<img className="card-img" src={props.image} alt="" />
-			<h4 className="card-title">{props.title}</h4>
-			<h6 className="card-author">{props.author}</h6>
+			<Link
+				style={{ textDecoration: "none", color: "inherit" }}
+				to={`/item/${props.accession_number}`}
+			>
+				<img className="card-img" src={props.image} alt="" />
+				<h4 className="card-title">{props.title}</h4>
+				<h6 className="card-author">{props.author}</h6>
+			</Link>
 		</div>
 	);
 };

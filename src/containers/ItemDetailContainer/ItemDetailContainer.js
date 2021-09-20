@@ -1,24 +1,34 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import "./ItemDetailContainer.css";
+import { Spinner } from "react-bootstrap";
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = (props) => {
 	const [data, setData] = useState([]);
 	const [loading, setloading] = useState(false);
 
 	useEffect(() => {
 		setloading(true);
-		const urlId = "https://openaccess-api.clevelandart.org/api/artworks/129799";
+		const urlId = `https://openaccess-api.clevelandart.org/api/artworks/${props.accession_number}`;
 		fetch(urlId)
 			.then((res) => res.json())
 			.then((res) => setData(res.data))
 			.catch((error) => console.log(error, "Falló request a la API."))
 			.finally(() => setloading(false));
-	}, []);
+	}, [props.accession_number]);
 	if (loading) {
-		return <p>Loading...</p>;
+		return (
+			<>
+				<p>Loading...</p>
+				<Spinner animation="border" />
+			</>
+		);
 	} else {
-		return <ItemDetail data={data} />;
+		return (
+			<div className="detail-container">
+				<ItemDetail data={data} />
+			</div>
+		);
 	}
 };
 

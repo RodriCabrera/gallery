@@ -1,18 +1,20 @@
 import "./App.css";
 import NavBar from "./components/Navbar/NavBar.js";
-import ItemListContainer from "./containers/ItemListContainer/ItemListContainer.js";
-import "./containers/ItemListContainer/ItemListContainer.css";
-import Carousel from "./components/Carousel/Carousel";
-import ItemDetailContainer from "./containers/ItemDetailContainer/ItemDetailContainer";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Details from "./pages/Details";
+import NotFound from "./pages/NotFound";
 
 function App() {
 	return (
-		<div className="App">
+		<BrowserRouter>
 			<NavBar />
-			<Carousel />
-			<ItemListContainer />
-			<ItemDetailContainer />
-		</div>
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route exact path="/item/:id" component={Details} />
+				<Route path="*" component={NotFound} />
+			</Switch>
+		</BrowserRouter>
 	);
 }
 

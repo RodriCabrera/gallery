@@ -1,3 +1,7 @@
+# ART LATIN AMERICA
+
+Proyecto realizado en el marco del curso de React.js de CODERHOUSE.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

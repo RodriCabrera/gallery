@@ -1,8 +1,7 @@
 * {
-  margin: 0;
-  padding: 0vw;
+	margin: 0;
+	padding: 0vw;
 }
-.App {
-  text-align: center;
+li {
+	list-style: none;
 }
-

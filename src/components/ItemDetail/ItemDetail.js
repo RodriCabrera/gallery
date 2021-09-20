@@ -2,7 +2,6 @@ import React from "react";
 import "./ItemDetail.css";
 
 const ItemDetail = (props) => {
-	console.log(props.data.images);
 	return (
 		<article className="detail">
 			<img
@@ -16,6 +15,7 @@ const ItemDetail = (props) => {
 				<p>{props.data.wall_description}</p>
 				<p>Technique: {props.data.technique}</p>
 				<p>Extra fact: {props.data.fun_fact}</p>
+				<button className="addToCart">Add to cart</button>
 			</div>
 		</article>
 	);

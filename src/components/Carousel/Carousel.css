@@ -1,8 +1,28 @@
-.carousel {
+.wrapper {
 	height: 400px;
 	background-color: rgb(197, 197, 197);
 }
 .banner {
 	height: 400px;
 	overflow: hidden;
+}
+.banner-img {
+	width: 100%;
+}
+.banner-header {
+	font-family: monospace;
+	text-align: start;
+	color: white;
+	margin-left: 4rem;
+	padding-top: 4rem;
+	width: 50%;
+}
+.banner1 {
+	background-image: url("./assets/Banner1.png");
+}
+.banner2 {
+	background-image: url("./assets/Banner2.png");
+}
+.banner3 {
+	background-image: url("./assets/Banner3.png");
 }

@@ -7,6 +7,7 @@ const ItemList = (props) => {
 	const itemMap = () => {
 		return props.data.map((item) => (
 			<Item
+				accession_number={item.accession_number}
 				key={item.id}
 				title={item.title}
 				author={item.culture[0]}

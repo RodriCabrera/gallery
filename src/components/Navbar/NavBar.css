@@ -1,11 +1,16 @@
 nav {
-	padding: var(--nav-padding);
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	padding: 15px;
+	border-top: orangered 2px solid;
+}
+a {
+	text-decoration: none;
+	color: inherit;
 }
 .nav-logo {
-	height: 60px;
+	height: 80px;
 }
 .nav-btnList {
 	display: flex;
@@ -14,11 +19,10 @@ nav {
 	margin-top: 0.5rem;
 }
 .nav-btn {
-	background-color: white;
-	border: 0px;
-	font-size: 1rem;
+	font-size: 1.3rem;
+	font-family: monospace;
 	cursor: pointer;
-	margin: 5px;
+	margin: 0.8rem;
 	text-decoration: none;
 	color: black;
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./ItemListContainer.css";
-// import Card from "../../components/Card/Card";
-// import Masonry from "react-masonry-css";
+import { Spinner } from "react-bootstrap";
+
 import { useEffect, useState } from "react";
 import ItemList from "../../components/ItemList/ItemList";
 
@@ -23,7 +23,12 @@ const ItemListContainer = () => {
 	return (
 		<>
 			<ItemList data={data} />
-			{loading && <h4>Loading content...</h4>}
+			{loading && (
+				<>
+					<Spinner animation="border" />
+					<h2>Loading...</h2>{" "}
+				</>
+			)}
 		</>
 	);
 };
