@@ -39,3 +39,9 @@
 		margin-bottom: 15px; /* space between items */
 	}
 }
+.loading-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

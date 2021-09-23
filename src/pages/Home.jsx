@@ -4,10 +4,10 @@ import ItemListContainer from "../containers/ItemListContainer/ItemListContainer
 
 const Home = () => {
 	return (
-		<div>
+		<>
 			<Carrousel />
 			<ItemListContainer />
-		</div>
+		</>
 	);
 };
 

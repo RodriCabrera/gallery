@@ -5,8 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const Carrousel = () => {
 	return (
-		<div className="wrapper">
-			<Carousel>
+		<>
+			<Carousel className="wrapper">
 				<Carousel.Item className="banner banner1">
 					<h2 className="banner-header">Welcome to Art Latin America</h2>
 				</Carousel.Item>
@@ -20,7 +20,7 @@ const Carrousel = () => {
 					<h2 className="banner-header">Please feel free to contact us.</h2>
 				</Carousel.Item>
 			</Carousel>
-		</div>
+		</>
 	);
 };
 

@@ -24,10 +24,10 @@ const ItemListContainer = () => {
 		<>
 			<ItemList data={data} />
 			{loading && (
-				<>
+				<div className="loading-container">
 					<Spinner animation="border" />
 					<h2>Loading...</h2>{" "}
-				</>
+				</div>
 			)}
 		</>
 	);

@@ -1,0 +1,18 @@
+.itemContainer {
+	display: flex;
+	flex-direction: column;
+	width: 150px;
+	align-items: center;
+	justify-content: flex-start;
+}
+.cart-button {
+	padding: 8px;
+	border: 0px;
+	font-family: monospace;
+}
+.quantity {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 120px;
+}

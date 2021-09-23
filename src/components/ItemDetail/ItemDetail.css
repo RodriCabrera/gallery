@@ -5,8 +5,6 @@ article {
 	width: 90%;
 }
 .detail-image {
-	max-width: 100%;
-	height: auto;
 	border-radius: 2px;
 }
 .detail-info {
@@ -14,11 +12,4 @@ article {
 }
 .detail-info p {
 	text-align: justify;
-}
-.addToCart {
-	background-color: black;
-	color: rgb(214, 214, 214);
-	padding: 8px;
-	border: 0px;
-	font-family: monospace;
 }

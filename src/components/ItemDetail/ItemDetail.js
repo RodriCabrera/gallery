@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
 const ItemDetail = (props) => {
+	const [quantity, setQuantity] = useState(0);
+
+	const onAdd = (count) => {
+		setQuantity(count);
+	};
+
 	return (
 		<article className="detail">
 			<img
@@ -15,7 +22,8 @@ const ItemDetail = (props) => {
 				<p>{props.data.wall_description}</p>
 				<p>Technique: {props.data.technique}</p>
 				<p>Extra fact: {props.data.fun_fact}</p>
-				<button className="addToCart">Add to cart</button>
+				<ItemCount onAdd={onAdd} />
+				<p>Seleccionados para comprar: {quantity}</p>
 			</div>
 		</article>
 	);
