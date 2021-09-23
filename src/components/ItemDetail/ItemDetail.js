@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 
@@ -20,10 +21,13 @@ const ItemDetail = (props) => {
 				<h4>{props.data.title}</h4>
 				<h6>{props.data.culture}</h6>
 				<p>{props.data.wall_description}</p>
-				<p>Technique: {props.data.technique}</p>
 				<p>Extra fact: {props.data.fun_fact}</p>
+				<p>Technique: {props.data.technique}</p>
 				<ItemCount onAdd={onAdd} />
-				<p>Seleccionados para comprar: {quantity}</p>
+				<p>Quantity selected: {quantity}</p>
+				<button className="cart-button">
+					<Link to="/Cart">GO TO CART</Link>{" "}
+				</button>
 			</div>
 		</article>
 	);

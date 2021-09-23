@@ -1,6 +1,4 @@
 import React from "react";
-import { IoAddCircleOutline } from "react-icons/io5";
-import { IoRemoveCircleOutline } from "react-icons/io5";
 import { useState } from "react";
 import "./ItemCount.css";
 
@@ -27,9 +25,17 @@ const ItemCount = ({ onAdd }) => {
 				>
 					-
 				</button>
+				{/* <select>
+					<option value="" disabled>
+						Quantity
+					</option>
+					<option value={1}>1</option>
+					<option value={2}>2</option>
+					<option value={3}>3</option>
+				</select> */}
 			</div>
 			<button className="cart-button" onClick={() => onAdd(count)}>
-				Add to cart
+				ADD TO CART
 			</button>
 		</div>
 	);
