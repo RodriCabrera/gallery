@@ -12,13 +12,13 @@ function NavBar() {
 			</Link>
 			<ul className="nav-btnList">
 				<li>
-					<Link to="/" className="nav-btn">
+					<Link to="/about" className="nav-btn">
 						About
 					</Link>
 				</li>
 				<li>
 					{/* Linkeo al Home hasta que tenga estos componentes hechos */}
-					<Link to="/" className="nav-btn">
+					<Link to="/artists" className="nav-btn">
 						Artists
 					</Link>
 				</li>

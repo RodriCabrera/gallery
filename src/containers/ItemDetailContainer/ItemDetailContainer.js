@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
-import "./ItemDetailContainer.css";
 import { Spinner } from "react-bootstrap";
 
 const ItemDetailContainer = (props) => {
@@ -16,6 +15,7 @@ const ItemDetailContainer = (props) => {
 			.catch((error) => console.log(error, "Falló request a la API."))
 			.finally(() => setloading(false));
 	}, [props.accession_number]);
+
 	if (loading) {
 		return (
 			<>
@@ -25,7 +25,7 @@ const ItemDetailContainer = (props) => {
 		);
 	} else {
 		return (
-			<div className="detail-container">
+			<div style={{ backgroundColor: "whitesmoke" }}>
 				<ItemDetail data={data} />
 			</div>
 		);

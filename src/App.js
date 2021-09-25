@@ -7,10 +7,12 @@ import NotFound from "./pages/NotFound";
 import CartContainer from "./containers/CartContainer/CartContainer";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
 import CartContext from "./context/CartContext";
+import About from "./pages/About";
+import Artists from "./pages/Artists";
 
 function App() {
 	return (
-		<CartContext.Provider value={[]}>
+		<CartContext.Provider>
 			<BrowserRouter>
 				<NavBar />
 				<Switch>
@@ -18,6 +20,8 @@ function App() {
 					<Route exact path="/item/:id" component={Details} />
 					<Route exact path="/cart" component={CartContainer} />
 					<Route exact path="/artworks" component={ItemListContainer} />
+					<Route exact path="/about" component={About} />
+					<Route exact path="/artists" component={Artists} />
 					<Route path="*" component={NotFound} />
 				</Switch>
 			</BrowserRouter>
