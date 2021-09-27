@@ -2,41 +2,35 @@ import React from "react";
 import { useState } from "react";
 import "./ItemCount.css";
 
-const ItemCount = ({ onAdd }) => {
-	const [count, setCount] = useState(1);
-	const [stock] = useState(12);
+const ItemCount = ({ setQuantity }) => {
+	const [stock] = useState(10);
 
-	const addItem = () => {
-		if (stock > count) {
-			setCount(count + 1);
+	function handleChange(e) {
+		setQuantity(e.target.value);
+	}
+
+	function mapOptions() {
+		const options = [];
+		for (let i = 1; i <= stock; i++) {
+			options.push(i);
 		}
-	};
+		return options.map((num) => (
+			<option value={num} key={num}>
+				{num}
+			</option>
+		));
+	}
 
 	return (
 		<div className="itemContainer">
 			<div className="quantity">
-				<button className="cart-button" onClick={() => addItem()}>
-					+
-				</button>
-				<p className="quantity-count">{count}</p>
-				<button
-					className="cart-button"
-					onClick={() => setCount(Math.max(count - 1, 1))}
-				>
-					-
-				</button>
-				{/* <select>
-					<option value="" disabled>
-						Quantity
+				<select defaultValue="QUANTITY" onChange={handleChange}>
+					<option key={0} disabled>
+						QUANTITY
 					</option>
-					<option value={1}>1</option>
-					<option value={2}>2</option>
-					<option value={3}>3</option>
-				</select> */}
+					{mapOptions()}
+				</select>
 			</div>
-			<button className="cart-button" onClick={() => onAdd(count)}>
-				ADD TO CART
-			</button>
 		</div>
 	);
 };

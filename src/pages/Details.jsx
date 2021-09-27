@@ -7,5 +7,4 @@ const Details = () => {
 
 	return <ItemDetailContainer accession_number={id} />;
 };
-
 export default Details;

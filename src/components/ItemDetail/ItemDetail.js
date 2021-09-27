@@ -2,17 +2,26 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
+import { useCartContext } from "../../context/CartContext";
 
 const ItemDetail = (props) => {
 	const [quantity, setQuantity] = useState(0);
 
-	const onAdd = (count) => {
-		setQuantity(count);
+	const { cart, addItem, isInCart, logCart } = useCartContext();
+
+	const itemId = props.data.accession_number;
+	const itemTitle = props.data.title;
+
+	const handleClick = () => {
+		if (quantity > 0) {
+			isInCart(itemId)
+				? console.log("Ya esta en el carrito", cart)
+				: addItem(itemId, itemTitle, quantity);
+		}
 	};
 
 	return (
 		<>
-			{" "}
 			<p style={{ margin: "1rem", fontFamily: "monospace" }}>
 				<Link to="/artworks">{"<"}Back to Artworks</Link>
 			</p>
@@ -35,11 +44,18 @@ const ItemDetail = (props) => {
 						</div>
 						<div className="buyprints">
 							<h6>Buy Prints</h6>
-							<ItemCount onAdd={onAdd} />
-							<p>Quantity selected: {quantity}</p>
-							<button className="cart-button">
-								<Link to="/Cart">GO TO CART</Link>
+							{/* El ItemCount solamente trae la quantity. El botón de ADD TO CART (en este componente),
+							tiene la lógica y el link*/}
+							<ItemCount setQuantity={setQuantity} />
+							{quantity > 0 && (
+								<p>
+									SELECTED: {quantity} x "{props.data.title}"
+								</p>
+							)}
+							<button className="cart-button" onClick={handleClick}>
+								{/* <Link to="/Cart">GO TO CART{cart}</Link> */}ADD TO CART
 							</button>
+							<button onClick={logCart}>CONSOLE.LOG CART (para testear)</button>
 						</div>
 					</div>
 				</div>

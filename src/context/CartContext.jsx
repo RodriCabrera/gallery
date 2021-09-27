@@ -1,16 +1,18 @@
-import * as React from "react";
+import React, { useState, useContext } from "react";
 
-const CartContext = React.createContext([]);
+export const CartContext = React.createContext({
+	id: undefined,
+	quantity: undefined,
+});
 
 export const CartProvider = ({ children }) => {
-	const [cart, setCart] = React.useState([]);
+	// El cart va a ser un array con objetos (los productos)
+	const [cart, setCart] = useState([
+		{ id: undefined, quantity: undefined, title: undefined, img: undefined },
+	]);
 
-	const logCart = () => {
-		console.log(cart);
-	};
-
-	const addItem = (itemId, quantity) => {
-		setCart(cart.push({ id: itemId, quantity: quantity }));
+	const addItem = (itemId, title, quantity) => {
+		setCart([{ id: itemId, title: title, quantity: quantity }]);
 	};
 
 	const removeItem = (removeId) => {
@@ -22,20 +24,27 @@ export const CartProvider = ({ children }) => {
 	};
 
 	const isInCart = (isId) => {
+		let exists;
 		for (var i = 0; i < cart.length; i++) {
 			if (cart[i].id === isId) {
-				return true;
-			} else return false;
+				exists = true;
+			} else exists = false;
 		}
+
+		return exists;
 	};
 
 	const clear = () => {
 		return setCart([]);
 	};
 
+	const logCart = () => {
+		console.log(cart);
+	};
+
 	return (
 		<CartContext.Provider
-			value={{ addItem, removeItem, isInCart, clear, logCart }}
+			value={{ cart, addItem, removeItem, isInCart, clear, logCart }}
 		>
 			{children}
 		</CartContext.Provider>
@@ -43,13 +52,11 @@ export const CartProvider = ({ children }) => {
 };
 
 export const useCartContext = () => {
-	const context = React.useContext(CartContext);
+	const context = useContext(CartContext);
 	if (!context) {
 		throw new Error(
-			"El hook useUser debe ser usado dentro de un UserProvider. No seas pavo."
+			"El hook useCartContext debe ser usado dentro de un CartProvider. No seas pavo."
 		);
 	}
 	return context;
 };
-
-export default CartContext;
