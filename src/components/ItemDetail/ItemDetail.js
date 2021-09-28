@@ -4,19 +4,14 @@ import ItemCount from "../ItemCount/ItemCount";
 import "./ItemDetail.css";
 import { useCartContext } from "../../context/CartContext";
 
-const ItemDetail = (props) => {
+const ItemDetail = ({ data }) => {
 	const [quantity, setQuantity] = useState(0);
 
-	const { cart, addItem, isInCart, logCart } = useCartContext();
-
-	const itemId = props.data.accession_number;
-	const itemTitle = props.data.title;
+	const { addToCart, logCart } = useCartContext();
 
 	const handleClick = () => {
 		if (quantity > 0) {
-			isInCart(itemId)
-				? console.log("Ya esta en el carrito", cart)
-				: addItem(itemId, itemTitle, quantity);
+			addToCart(data, quantity);
 		}
 	};
 
@@ -30,17 +25,17 @@ const ItemDetail = (props) => {
 					<div className="detail-image-container">
 						<img
 							className="detail-image"
-							src={`https://openaccess-cdn.clevelandart.org/${props.data.accession_number}/${props.data.accession_number}_web.jpg`}
+							src={`https://openaccess-cdn.clevelandart.org/${data.accession_number}/${data.accession_number}_web.jpg`}
 							alt="caption"
 						/>
 					</div>
 					<div className="detail-content">
 						<div>
-							<h4>{props.data.title}</h4>
-							<h6>{props.data.culture}</h6>
-							<p>{props.data.wall_description}</p>
-							<p>Extra fact: {props.data.fun_fact}</p>
-							<p>Technique: {props.data.technique}</p>
+							<h4>{data.title}</h4>
+							<h6>{data.culture}</h6>
+							<p>{data.wall_description}</p>
+							<p>Extra fact: {data.fun_fact}</p>
+							<p>Technique: {data.technique}</p>
 						</div>
 						<div className="buyprints">
 							<h6>Buy Prints</h6>
@@ -49,7 +44,7 @@ const ItemDetail = (props) => {
 							<ItemCount setQuantity={setQuantity} />
 							{quantity > 0 && (
 								<p>
-									SELECTED: {quantity} x "{props.data.title}"
+									SELECTED: {quantity} x "{data.title}"
 								</p>
 							)}
 							<button className="cart-button" onClick={handleClick}>

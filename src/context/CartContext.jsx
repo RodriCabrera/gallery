@@ -6,32 +6,32 @@ export const CartContext = React.createContext({
 });
 
 export const CartProvider = ({ children }) => {
-	// El cart va a ser un array con objetos (los productos)
-	const [cart, setCart] = useState([
-		{ id: undefined, quantity: undefined, title: undefined, img: undefined },
-	]);
+	const [cart, setCart] = useState([]);
 
-	const addItem = (itemId, title, quantity) => {
-		setCart([{ id: itemId, title: title, quantity: quantity }]);
+	const addToCart = (item, quantity) => {
+		if (isInCart(item.id)) {
+			let index = cart.findIndex((e) => e.item.id === item.id); //Index del item repetido
+			let oldQ = cart[index].quantity;
+			cart.splice(index, 1); // La cantidad vieja
+			setCart([...cart, { item: item, quantity: quantity + oldQ }]);
+		} else {
+			setCart([...cart, { item: item, quantity: quantity }]);
+		}
 	};
 
 	const removeItem = (removeId) => {
-		for (var i = 0; i < cart.length; i++) {
-			if (cart[i].id === removeId) {
-				setCart(cart.splice(i, 1));
-			}
-		}
+		const newList = cart.filter((element) => element.item.id !== removeId);
+		setCart(newList);
 	};
 
-	const isInCart = (isId) => {
-		let exists;
-		for (var i = 0; i < cart.length; i++) {
-			if (cart[i].id === isId) {
-				exists = true;
-			} else exists = false;
-		}
-
-		return exists;
+	const isInCart = (id) => {
+		return cart.find((element) => {
+			if (element.item.id === id) {
+				return element.item.id;
+			} else {
+				return false;
+			}
+		});
 	};
 
 	const clear = () => {
@@ -44,7 +44,7 @@ export const CartProvider = ({ children }) => {
 
 	return (
 		<CartContext.Provider
-			value={{ cart, addItem, removeItem, isInCart, clear, logCart }}
+			value={{ cart, addToCart, removeItem, isInCart, clear, logCart }}
 		>
 			{children}
 		</CartContext.Provider>

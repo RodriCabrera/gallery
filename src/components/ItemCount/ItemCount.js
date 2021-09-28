@@ -6,7 +6,7 @@ const ItemCount = ({ setQuantity }) => {
 	const [stock] = useState(10);
 
 	function handleChange(e) {
-		setQuantity(e.target.value);
+		setQuantity(parseInt(e.target.value));
 	}
 
 	function mapOptions() {
