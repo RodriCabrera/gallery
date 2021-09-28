@@ -7,7 +7,7 @@ import { useCartContext } from "../../context/CartContext";
 const ItemDetail = ({ data }) => {
 	const [quantity, setQuantity] = useState(0);
 
-	const { addToCart, logCart } = useCartContext();
+	const { addToCart } = useCartContext();
 
 	const handleClick = () => {
 		if (quantity > 0) {
@@ -48,9 +48,8 @@ const ItemDetail = ({ data }) => {
 								</p>
 							)}
 							<button className="cart-button" onClick={handleClick}>
-								{/* <Link to="/Cart">GO TO CART{cart}</Link> */}ADD TO CART
+								<Link to="/Cart">ADD TO CART</Link>
 							</button>
-							<button onClick={logCart}>CONSOLE.LOG CART (para testear)</button>
 						</div>
 					</div>
 				</div>
