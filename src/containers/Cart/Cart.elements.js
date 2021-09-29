@@ -1,10 +1,16 @@
 import styled from "styled-components";
 
 export const CartContainer = styled.div`
-	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 `;
 export const CartWrapper = styled.div`
+	max-width: 1000px;
 	width: 100%;
-	background-color: green;
+	height: 100%;
+	background-color: lightgrey;
 	padding: 1rem;
 `;
+export const CartContents = styled.div``;
+export const CartItem = styled.div``;

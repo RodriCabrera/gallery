@@ -21,8 +21,12 @@ a {
 .nav-btn {
 	font-size: 1.3rem;
 	font-family: monospace;
-	cursor: pointer;
-	margin: 0.8rem;
-	text-decoration: none;
-	color: black;
+	margin: 0rem 1rem;
+}
+.nav-btn-cart {
+	font-size: 1.3rem;
+	font-family: monospace;
+	margin: 0rem 1rem;
+	display: flex;
+	align-items: center;
 }

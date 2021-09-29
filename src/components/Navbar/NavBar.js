@@ -3,8 +3,16 @@ import "./NavBar.css";
 import { FiShoppingCart } from "react-icons/fi";
 import logo from "./logo-art.png";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 
 function NavBar() {
+	const { cart } = useCartContext();
+
+	const cartIconTotal = () => {
+		let total = 0;
+		cart.forEach((elem) => (total += elem.quantity));
+		return total;
+	};
 	return (
 		<nav>
 			<Link to="/">
@@ -27,8 +35,9 @@ function NavBar() {
 						Artworks
 					</Link>
 				</li>
-				<Link to="/cart">
-					<FiShoppingCart className="nav-btn" />
+				<Link to="/cart" className="nav-btn-cart">
+					<FiShoppingCart style={{ margin: "0" }} className="nav-btn" />
+					<p style={{ margin: "0" }}>({cartIconTotal()})</p>
 				</Link>
 			</ul>
 		</nav>
