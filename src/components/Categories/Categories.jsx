@@ -15,6 +15,7 @@ const Categories = ({ categories, setSelectedCategory }) => {
 						{category.name}
 					</option>
 				))}
+				<option value="">SHOW ALL</option>
 			</select>
 		</>
 	);
