@@ -3,15 +3,15 @@ import Masonry from "react-masonry-css";
 import Item from "../Item/Item";
 import "../../containers/ItemListContainer/ItemListContainer.css";
 
-const ItemList = (props) => {
+const ItemList = ({ data }) => {
 	const itemMap = () => {
-		return props.data.map((item) => (
+		return data.map((item) => (
 			<Item
-				accession_number={item.accession_number}
+				id={item.id}
 				key={item.id}
-				title={item.title}
-				author={item.culture[0]}
-				image={item.images.web.url}
+				titulo={item.titulo}
+				autor={item.autor}
+				image={item.image}
 			/>
 		));
 	};
@@ -31,7 +31,7 @@ const ItemList = (props) => {
 				className="my-masonry-grid"
 				columnClassName="my-masonry-grid_column"
 			>
-				{props.data && itemMap()}
+				{data && itemMap()}
 			</Masonry>
 		</div>
 	);

@@ -15,12 +15,12 @@ const Cart = () => {
 		cart.map((elem) => {
 			return (
 				<CartItem key={elem.item.id}>
-					<h5>{elem.item.title}</h5>
-					<h6>Price: $100</h6>
+					<h5>{elem.item.titulo}</h5>
+					<h6>Price: ${elem.item.precio}</h6>
 					<h6>QTY: {elem.quantity}</h6>
 					<button onClick={() => removeItem(elem.item.id)}>Remove</button>
 					<button>
-						<Link to={`/item/${elem.item.accession_number}`}>Edit QTY</Link>
+						<Link to={`/item/${elem.item.id}`}>Edit QTY</Link>
 					</button>
 					<hr />
 				</CartItem>
@@ -29,7 +29,7 @@ const Cart = () => {
 	const calculateTotal = () => {
 		let num = 0;
 		cart.forEach((elem) => {
-			num += elem.quantity * 100;
+			num += elem.quantity * elem.item.precio;
 		});
 		return num;
 	};
@@ -39,11 +39,16 @@ const Cart = () => {
 				<Link to="/artworks">{"<"}Back to Artworks</Link>
 			</p>
 			<CartContainer>
-				<h1>You've added to cart:</h1>
 				<CartWrapper>
-					{mapItems()}
-					<h5>TOTAL: ${calculateTotal()}</h5>
-					<button>PROCEED TO CHECKOUT</button>
+					{cart.length > 0 && (
+						<>
+							<h1>You've added to cart:</h1>
+							{mapItems()}
+							<h5>TOTAL: ${calculateTotal()}</h5>
+							<button>PROCEED TO CHECKOUT</button>
+						</>
+					)}
+					{cart.length === 0 && "The cart is empty"}
 				</CartWrapper>
 			</CartContainer>
 		</>

@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 
 const Details = () => {
 	const { id } = useParams();
-
-	return <ItemDetailContainer accession_number={id} />;
+	return <ItemDetailContainer id={id} />;
 };
 export default Details;

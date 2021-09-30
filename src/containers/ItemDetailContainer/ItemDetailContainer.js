@@ -1,20 +1,45 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../../components/ItemDetail/ItemDetail";
 import { Spinner } from "react-bootstrap";
+import { getFirestore } from "../../firebase";
 
-const ItemDetailContainer = ({ accession_number }) => {
+const ItemDetailContainer = ({ id }) => {
 	const [data, setData] = useState([]);
 	const [loading, setloading] = useState(false);
 
 	useEffect(() => {
+		//Apuntamos a la base de datosw.
+		const db = getFirestore();
+		//Apuntamos a una colección.
+		const artworks = db.collection("artworks");
+		//Apuntamos a un elemento específico:
+		const item = artworks.doc(id);
 		setloading(true);
-		const urlId = `https://openaccess-api.clevelandart.org/api/artworks/${accession_number}`;
-		fetch(urlId)
-			.then((res) => res.json())
-			.then((res) => setData(res.data))
-			.catch((error) => console.log(error, "Falló request a la API."))
-			.finally(() => setloading(false));
-	}, [accession_number]);
+		//Traemos los datos del producto:
+		item
+			.get(() => {})
+			.then((doc) => {
+				if (!doc.exists) {
+					console.log("El producto no existe");
+				} else {
+					setData({ id: doc.id, ...doc.data() });
+				}
+			})
+			.catch(() => {})
+			.finally(() => {
+				setloading(false);
+			});
+	}, [id]);
+
+	// useEffect(() => {
+	// 	setloading(true);
+	// 	const urlId = `https://openaccess-api.clevelandart.org/api/artworks/${accession_number}`;
+	// 	fetch(urlId)
+	// 		.then((res) => res.json())
+	// 		.then((res) => setData(res.data))
+	// 		.catch((error) => console.log(error, "Falló request a la API."))
+	// 		.finally(() => setloading(false));
+	// }, [accession_number]);
 
 	if (loading) {
 		return (

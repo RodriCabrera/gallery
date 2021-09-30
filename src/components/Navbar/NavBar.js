@@ -37,7 +37,9 @@ function NavBar() {
 				</li>
 				<Link to="/cart" className="nav-btn-cart">
 					<FiShoppingCart style={{ margin: "0" }} className="nav-btn" />
-					<p style={{ margin: "0" }}>({cartIconTotal()})</p>
+					{cart.length > 0 && (
+						<p style={{ margin: "0" }}>({cartIconTotal()})</p>
+					)}
 				</Link>
 			</ul>
 		</nav>

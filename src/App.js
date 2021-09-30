@@ -11,11 +11,8 @@ import Artists from "./pages/Artists";
 import { CartProvider } from "./context/CartContext";
 
 function App() {
-	const emptyCart = [
-		{ id: undefined, quantity: undefined, title: undefined, img: undefined },
-	];
 	return (
-		<CartProvider value={emptyCart}>
+		<CartProvider value={[]}>
 			<BrowserRouter>
 				<NavBar />
 				<Switch>

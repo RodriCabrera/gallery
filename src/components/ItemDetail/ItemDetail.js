@@ -23,19 +23,14 @@ const ItemDetail = ({ data }) => {
 			<div className="detail-container">
 				<div className="detail-wrapper">
 					<div className="detail-image-container">
-						<img
-							className="detail-image"
-							src={`https://openaccess-cdn.clevelandart.org/${data.accession_number}/${data.accession_number}_web.jpg`}
-							alt="caption"
-						/>
+						<img className="detail-image" src={data.image} alt="caption" />
 					</div>
 					<div className="detail-content">
 						<div>
-							<h4>{data.title}</h4>
-							<h6>{data.culture}</h6>
-							<p>{data.wall_description}</p>
-							<p>Extra fact: {data.fun_fact}</p>
-							<p>Technique: {data.technique}</p>
+							<h4>{data.titulo}</h4>
+							<h6>{data.autor}</h6>
+							<p>{data.fecha}</p>
+							<p>A4 Print Price: ${data.precio}</p>
 						</div>
 						<div className="buyprints">
 							<h6>Buy Prints</h6>
@@ -44,7 +39,7 @@ const ItemDetail = ({ data }) => {
 							<ItemCount setQuantity={setQuantity} />
 							{quantity > 0 && (
 								<p>
-									SELECTED: {quantity} x "{data.title}"
+									SELECTED: {quantity} x "{data.titulo}"
 								</p>
 							)}
 							<button className="cart-button" onClick={handleClick}>
