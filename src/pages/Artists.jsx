@@ -26,9 +26,9 @@ const Artists = () => {
 
 	return (
 		<>
-			<div>
+			<>
 				<ArtistsList data={data} />
-			</div>
+			</>
 		</>
 	);
 	// Generar lista de los autores de la collection "artworks" de Firestore

@@ -6,7 +6,7 @@ import Details from "./pages/Details";
 import NotFound from "./pages/NotFound";
 import Cart from "./pages/Cart";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
-import About from "./pages/About";
+import About from "./pages/About/About";
 import Artists from "./pages/Artists";
 import { CartProvider } from "./context/CartContext";
 import Footer from "./components/Footer/Footer";

@@ -4,8 +4,7 @@ export const Container = styled.div`
 	padding: 1rem;
 	background-color: rgb(238, 238, 238);
 `;
-export const Heading = styled.h1`
-	font-family: monospace;
+export const Heading = styled.h2`
 	letter-spacing: 0px;
 	margin-bottom: 1rem;
 `;
