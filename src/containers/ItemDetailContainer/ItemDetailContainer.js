@@ -8,27 +8,25 @@ const ItemDetailContainer = ({ id }) => {
 	const [loading, setloading] = useState(false);
 
 	useEffect(() => {
-		//Apuntamos a la base de datosw.
+		setloading(true);
+		//Apuntamos a la base de datos:
 		const db = getFirestore();
-		//Apuntamos a una colección.
+		//Apuntamos a una colección:
 		const artworks = db.collection("artworks");
 		//Apuntamos a un elemento específico:
 		const item = artworks.doc(id);
-		setloading(true);
-		//Traemos los datos del producto:
+		//Traemos los datos del elemento específico:
 		item
 			.get(() => {})
 			.then((doc) => {
 				if (!doc.exists) {
-					console.log("El producto no existe");
+					console.log("El producto no está disponible");
 				} else {
 					setData({ id: doc.id, ...doc.data() });
 				}
 			})
-			.catch(() => {})
-			.finally(() => {
-				setloading(false);
-			});
+			.catch((err) => console.log("ERROR:", err))
+			.finally(() => setloading(false));
 	}, [id]);
 
 	// useEffect(() => {

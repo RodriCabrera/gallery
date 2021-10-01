@@ -13,6 +13,7 @@ const ItemListContainer = () => {
 	const [categories, setCategories] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState(); // selectedCategory es el categoryId
 
+	// PEDIDO A LA API:
 	// useEffect(() => {
 	// 	setloading(true);
 	// 	const url =
@@ -26,7 +27,9 @@ const ItemListContainer = () => {
 
 	useEffect(() => {
 		setloading(true);
+		//Apuntamos a la base de datos:
 		const db = getFirestore();
+		//Apuntamos a una colección:
 		const artworks = db.collection("artworks");
 		artworks
 			.get()

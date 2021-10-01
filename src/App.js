@@ -9,6 +9,7 @@ import ItemListContainer from "./containers/ItemListContainer/ItemListContainer"
 import About from "./pages/About";
 import Artists from "./pages/Artists";
 import { CartProvider } from "./context/CartContext";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 	return (
@@ -24,6 +25,7 @@ function App() {
 					<Route exact path="/artists" component={Artists} />
 					<Route path="*" component={NotFound} />
 				</Switch>
+				<Footer />
 			</BrowserRouter>
 		</CartProvider>
 	);
