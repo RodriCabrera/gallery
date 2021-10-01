@@ -14,6 +14,7 @@ const ItemList = ({ data, selectedCategory }) => {
 	const itemMap = (items) => {
 		return items.map((item) => (
 			<Item
+				fecha={item.fecha}
 				id={item.id}
 				key={item.id}
 				titulo={item.titulo}

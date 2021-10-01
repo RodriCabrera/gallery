@@ -13,18 +13,6 @@ const ItemListContainer = () => {
 	const [categories, setCategories] = useState([]);
 	const [selectedCategory, setSelectedCategory] = useState(); // selectedCategory es el categoryId
 
-	// PEDIDO A LA API:
-	// useEffect(() => {
-	// 	setloading(true);
-	// 	const url =
-	// 		"https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&department=Art+of+the+Americas&limit=12&indent=1";
-	// 	fetch(url)
-	// 		.then((res) => res.json())
-	// 		.then((result) => setData(result.data))
-	// 		.catch((error) => console.log(error, "Falló request a la API."))
-	// 		.finally(() => setloading(false));
-	// }, []);
-
 	useEffect(() => {
 		setloading(true);
 		//Apuntamos a la base de datos:
