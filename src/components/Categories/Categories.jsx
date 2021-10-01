@@ -6,7 +6,11 @@ const Categories = ({ categories, setSelectedCategory }) => {
 	};
 	return (
 		<>
-			<select defaultValue="" onChange={handleChange}>
+			<select
+				style={{ marginLeft: "1rem" }}
+				defaultValue=""
+				onChange={handleChange}
+			>
 				<option value="" disabled>
 					FILTER BY CATEGORIES
 				</option>

@@ -2,7 +2,7 @@ import React from "react";
 
 const About = () => {
 	return (
-		<div>
+		<div style={{ height: "80vh" }}>
 			<h2>About Art Latin America</h2>
 			<p>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere iusto

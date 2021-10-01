@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { FiShoppingCart } from "react-icons/fi";
 
 export const NavbarContainer = styled.div`
 	width: 100%;
@@ -9,7 +10,7 @@ export const NavbarContainer = styled.div`
 	z-index: 99;
 	padding: 0;
 	margin: 0;
-	background-color: whitesmoke;
+	background-color: white;
 	font-family: monospace;
 `;
 export const NavbarWrapper = styled.div`
@@ -22,22 +23,12 @@ export const NavbarWrapper = styled.div`
 	flex-wrap: wrap;
 	margin: auto;
 `;
-export const IconLogo = styled(Link)`
-	/* height: 100%; */
-	color: inherit;
-	text-decoration: none;
+export const IconLogo = styled.img`
+	height: 80px;
 	margin: 0 5px;
 	padding: 0;
 	position: relative;
 	top: 0px;
-	font-size: 2.5rem;
-	letter-spacing: 2px;
-	font-family: "Montserrat", sans-serif;
-	font-weight: 800;
-	cursor: pointer;
-	&:hover {
-		color: inherit;
-	}
 `;
 
 export const Menu = styled.ul`
@@ -56,7 +47,7 @@ export const Menu = styled.ul`
 		/*click true: visible */
 		left: ${({ click }) => (click ? 0 : "-100%")};
 		flex-direction: column;
-		transition: 0.5s all ease-in-out;
+		transition: 0.5s all ease;
 		background-color: #000000f4;
 	}
 `;
@@ -83,10 +74,7 @@ export const MenuItem = styled(Link)`
 		}
 	}
 `;
-export const MenuItemLink = styled.a`
-	text-decoration: none;
-	color: inherit;
-
+export const MenuItemLink = styled.span`
 	@media screen and (max-width: 960px) {
 		font-size: 1.5rem;
 		color: white;
@@ -99,5 +87,11 @@ export const IconLogoMobile = styled.div`
 		display: flex;
 		font-size: 2rem;
 		margin-right: 2rem;
+	}
+`;
+export const CartIcon = styled(FiShoppingCart)`
+	@media screen and (max-width: 960px) {
+		color: white;
+		font-size: 2rem;
 	}
 `;

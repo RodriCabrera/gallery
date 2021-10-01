@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./NavBar.css";
-import { FiShoppingCart } from "react-icons/fi";
 import logo from "./logo-art.png";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import {
+	CartIcon,
 	IconLogo,
 	IconLogoMobile,
 	Menu,
@@ -31,30 +31,27 @@ function NavBar() {
 		<NavbarContainer>
 			<NavbarWrapper>
 				<Link to="/">
-					<img src={logo} alt="logo" className="nav-logo" />
+					<IconLogo src={logo} alt="logo" />
 				</Link>
-
 				<IconLogoMobile onClick={() => changeClick()}>
 					{click ? <FaTimes /> : <FaBars />}
 				</IconLogoMobile>
 
 				<Menu click={click}>
 					<MenuItem to="/artworks" onClick={() => changeClick()}>
-						<MenuItemLink to="/artworks">ARTWORKS</MenuItemLink>
+						<MenuItemLink>ARTWORKS</MenuItemLink>
 					</MenuItem>
 					<MenuItem to="/artists" onClick={() => changeClick()}>
-						<MenuItemLink to="/artists">ARTISTS</MenuItemLink>
+						<MenuItemLink>ARTISTS</MenuItemLink>
 					</MenuItem>
 					<MenuItem to="/about" onClick={() => changeClick()}>
 						<MenuItemLink>ABOUT US</MenuItemLink>
 					</MenuItem>
 					<MenuItem to="/cart" onClick={() => changeClick()}>
-						<Link to="/cart" className="nav-btn-cart">
-							<FiShoppingCart style={{ margin: "0" }} className="nav-btn" />
-							{cart.length > 0 && (
-								<p style={{ margin: "0" }}>({cartIconTotal()})</p>
-							)}
-						</Link>
+						<CartIcon />
+						{cart.length > 0 && (
+							<p style={{ margin: "0" }}>({cartIconTotal()})</p>
+						)}
 					</MenuItem>
 				</Menu>
 			</NavbarWrapper>

@@ -4,6 +4,7 @@ export const CartContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	min-height: 60vh;
 `;
 export const CartWrapper = styled.div`
 	max-width: 1000px;

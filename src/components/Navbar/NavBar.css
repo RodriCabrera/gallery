@@ -1,17 +1,15 @@
-nav {
+/* nav {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	padding: 0.5rem;
 	border-top: orangered 2px solid;
-}
+} */
 a {
 	text-decoration: none;
 	color: inherit;
 }
-.nav-logo {
-	height: 80px;
-}
+/*
 .nav-btnList {
 	display: flex;
 	flex-direction: row;
@@ -30,4 +28,8 @@ a {
 	margin: 0rem 1rem;
 	display: flex;
 	align-items: center;
-}
+} */
+/* 
+.nav-logo {
+	height: 80px;
+} */

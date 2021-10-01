@@ -35,7 +35,7 @@ const Cart = () => {
 	};
 	return (
 		<>
-			<p style={{ marginLeft: "1rem", fontFamily: "monospace" }}>
+			<p style={{ margin: "1rem", fontFamily: "monospace" }}>
 				<Link to="/artworks">{"<"}Back to Artworks</Link>
 			</p>
 			<CartContainer>
