@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Details from "./pages/Details";
 import NotFound from "./pages/NotFound";
-import Cart from "./pages/Cart";
+import Cart from "./pages/Cart/Cart";
 import ItemListContainer from "./containers/ItemListContainer/ItemListContainer";
 import About from "./pages/About/About";
 import Artists from "./pages/Artists";

@@ -11,12 +11,18 @@ export const CartProvider = ({ children }) => {
 	const addToCart = (item, quantity) => {
 		if (isInCart(item.id)) {
 			let index = cart.findIndex((e) => e.item.id === item.id); //Index del item repetido
-			let oldQ = cart[index].quantity;
-			cart.splice(index, 1); // La cantidad vieja
+			let oldQ = cart[index].quantity; // La cantidad vieja
+			cart.splice(index, 1); // Saco la cantidad vieja.
 			setCart([...cart, { item: item, quantity: quantity + oldQ }]);
 		} else {
 			setCart([...cart, { item: item, quantity: quantity }]);
 		}
+	};
+
+	const editQty = (item, newQty) => {
+		let index = cart.findIndex((e) => e.item.id === item.id); //Index del item
+		cart[index].quantity = newQty; // Modifico la quantity del item.
+		setCart([...cart]);
 	};
 
 	const removeItem = (removeId) => {
@@ -38,13 +44,9 @@ export const CartProvider = ({ children }) => {
 		return setCart([]);
 	};
 
-	const logCart = () => {
-		console.log(cart);
-	};
-
 	return (
 		<CartContext.Provider
-			value={{ cart, addToCart, removeItem, isInCart, clear, logCart }}
+			value={{ cart, addToCart, removeItem, isInCart, clear, editQty }}
 		>
 			{children}
 		</CartContext.Provider>
