@@ -8,6 +8,7 @@ const Footer = () => {
 				<Wrapper>
 					<TextBox>
 						<Text>ART LATIN AMERICA © 2021</Text>
+						<Text>Website by Rodrigo Cabrera</Text>
 					</TextBox>
 				</Wrapper>
 			</Container>
