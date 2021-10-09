@@ -18,11 +18,12 @@
 	width: 50%;
 }
 .banner1 {
-	background-image: url("./assets/Banner1.png");
+	background-image: url("https://www.bellasartes.gob.ar/media/uploads/coleccion/10684.jpg");
+	background-size: cover;
 }
 .banner2 {
-	background-image: url("./assets/Banner2.png");
+	background-image: url("https://www.bellasartes.gob.ar/media/uploads/coleccion/7183.jpg");
 }
 .banner3 {
-	background-image: url("./assets/Banner3.png");
+	background-image: url("https://www.bellasartes.gob.ar/media/uploads/coleccion/6833_e.jpg");
 }
