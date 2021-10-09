@@ -10,12 +10,14 @@ import About from "./pages/About/About";
 import Artists from "./pages/Artists";
 import { CartProvider } from "./context/CartContext";
 import Footer from "./components/Footer/Footer";
+import ScrollToTop from "./hooks/ScrollToTop";
 
 function App() {
 	return (
 		<CartProvider value={[]}>
 			<BrowserRouter>
 				<NavBar />
+				<ScrollToTop />
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/item/:id" component={Details} />

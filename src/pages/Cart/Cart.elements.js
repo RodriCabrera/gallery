@@ -63,4 +63,5 @@ export const StyledSelect = styled.select`
 	font-family: monospace;
 	border: 0;
 	width: 50px;
+	cursor: pointer;
 `;

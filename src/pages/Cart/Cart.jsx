@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
 	CartButton,
@@ -13,9 +13,13 @@ import {
 	StyledSelect,
 } from "./Cart.elements";
 import { useCartContext } from "../../context/CartContext";
+import BuyerForm from "../../components/BuyerForm/BuyerForm";
+import { getFirestore } from "../../firebase";
 
 const Cart = () => {
-	const { cart, removeItem, editQty } = useCartContext();
+	const { cart, removeItem, editQty, emptyCart } = useCartContext();
+	const [orderPlaced, setOrderPlaced] = useState(false);
+	const [orderId, setOrderId] = useState(undefined);
 
 	const mapItems = () =>
 		cart.map((elem) => {
@@ -64,27 +68,67 @@ const Cart = () => {
 		return num;
 	};
 
+	const handleCheckout = (name, email, phone) => {
+		const newOrder = {
+			buyer: { name: name, email: email, phone: phone },
+			items: { ...cart },
+			date: new Date(),
+		};
+		const db = getFirestore();
+		const ordersCollection = db.collection("orders");
+
+		ordersCollection
+			.add(newOrder)
+			.then((docRef) => {
+				console.log("Se creó el documento exitosamente: ", docRef.id);
+				setOrderId(docRef.id);
+			})
+			.catch((error) => {
+				console.log(error);
+			})
+			.finally(() => {
+				setOrderPlaced(true);
+				emptyCart();
+			});
+	};
+	const orderInfo = (id) => {
+		return (
+			<>
+				{orderId ? (
+					<>
+						<h3>Thank you!</h3>
+						<h4>Order ID: {id}</h4>{" "}
+					</>
+				) : (
+					<h4>Your order is being proccessed, please wait... </h4>
+				)}
+			</>
+		);
+	};
 	return (
 		<>
 			<p style={{ margin: "1rem", fontFamily: "monospace" }}>
 				<Link to="/artworks">{"<"}Back to Artworks</Link>
 			</p>
 			<CartContainer>
-				<CartWrapper>
-					{cart.length > 0 && (
-						<>
-							<h1 style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-								You've added to cart:
-							</h1>
-							{mapItems()}
-							<h5>TOTAL: ${calculateTotal()}</h5>
-							<CartButton size="1.5rem" hoverColor="lightgreen">
-								PROCEED TO CHECKOUT
-							</CartButton>
-						</>
-					)}
-					{cart.length === 0 && "The cart is empty"}
-				</CartWrapper>
+				{orderPlaced ? (
+					orderInfo(orderId)
+				) : (
+					<CartWrapper>
+						{cart.length > 0 && (
+							<>
+								<h1 style={{ textAlign: "center", marginBottom: "1.5rem" }}>
+									You've added to cart:
+								</h1>
+								{mapItems()}
+								<h5 style={{ textAlign: "end" }}>TOTAL: ${calculateTotal()}</h5>
+								<hr />
+								<BuyerForm handleCheckout={handleCheckout} />
+							</>
+						)}
+						{cart.length === 0 && "The cart is empty"}
+					</CartWrapper>
+				)}
 			</CartContainer>
 		</>
 	);

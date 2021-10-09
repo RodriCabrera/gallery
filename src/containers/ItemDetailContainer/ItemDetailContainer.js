@@ -29,16 +29,6 @@ const ItemDetailContainer = ({ id }) => {
 			.finally(() => setloading(false));
 	}, [id]);
 
-	// useEffect(() => {
-	// 	setloading(true);
-	// 	const urlId = `https://openaccess-api.clevelandart.org/api/artworks/${accession_number}`;
-	// 	fetch(urlId)
-	// 		.then((res) => res.json())
-	// 		.then((res) => setData(res.data))
-	// 		.catch((error) => console.log(error, "Falló request a la API."))
-	// 		.finally(() => setloading(false));
-	// }, [accession_number]);
-
 	if (loading) {
 		return (
 			<>
