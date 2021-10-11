@@ -10,9 +10,7 @@ const Item = ({ id, titulo, autor, image, fecha }) => {
 				to={`/item/${id}`} //Link a la page Details
 			>
 				<img className="card-img" src={image} alt="artworks" />
-				<h4 style={{ margin: "0" }} className="card-title">
-					{titulo}
-				</h4>
+				<h4 className="card-title">{titulo}</h4>
 				<h6 className="card-author">
 					{fecha} | {autor}
 				</h6>
