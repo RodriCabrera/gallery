@@ -54,10 +54,8 @@ export const ItemInfo = styled.div`
 	margin-bottom: 2rem;
 `;
 export const BuyPrintsBox = styled.div`
-	width: 50%;
 	display: flex;
 	flex-direction: column;
-	/* align-items: center; */
 `;
 export const AddToCartButton = styled(Link)`
 	background-color: black;
@@ -69,11 +67,8 @@ export const AddToCartButton = styled(Link)`
 	transition: ease-out 0.3s all;
 	&:hover {
 		color: #e6e6e6;
-		box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
-			rgba(0, 0, 0, 0.22) 0px 10px 10px;
-		background-color: #0d0d0d;
-	}
-	&:active {
 		box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+		background-color: #0d0d0d;
 	}
 `;

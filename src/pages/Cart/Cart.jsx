@@ -68,9 +68,9 @@ const Cart = () => {
 		return num;
 	};
 
-	const handleCheckout = (name, email, phone) => {
+	const handleCheckout = (buyer) => {
 		const newOrder = {
-			buyer: { name: name, email: email, phone: phone },
+			buyer: { name: buyer.name, email: buyer.email, phone: buyer.phone },
 			items: { ...cart },
 			date: new Date(),
 		};
