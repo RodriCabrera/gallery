@@ -96,8 +96,9 @@ const Cart = () => {
 			<>
 				{orderId ? (
 					<>
-						<h3>Thank you!</h3>
-						<h4>Order ID: {id}</h4>{" "}
+						<h3>Thank you! Your order has been placed.</h3>
+						<h4>An email has been sent with the next steps.</h4>
+						<h4>Order ID: {id}</h4>
 					</>
 				) : (
 					<h4>Your order is being proccessed, please wait... </h4>

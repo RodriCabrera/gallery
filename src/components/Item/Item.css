@@ -5,6 +5,12 @@
 	cursor: pointer;
 	text-align: left;
 	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+	transition: 0.2s cubic-bezier(0.075, 0.82, 0.165, 1) all;
+}
+.card:hover {
+	box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+		rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .card-img {
 	width: 100%;

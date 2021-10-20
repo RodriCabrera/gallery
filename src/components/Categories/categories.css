@@ -1,0 +1,10 @@
+.categories-select {
+	background-color: rgb(43, 43, 43);
+	color: white;
+	margin-left: 0.7rem;
+	font-size: 1.2rem;
+	font-family: monospace;
+	border: 0;
+	cursor: pointer;
+	padding: 1px;
+}

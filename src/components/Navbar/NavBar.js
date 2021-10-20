@@ -12,6 +12,7 @@ import {
 	MenuItemLink,
 	NavbarContainer,
 	NavbarWrapper,
+	CartCount,
 } from "./NavBar.elements";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -49,9 +50,7 @@ function NavBar() {
 					</MenuItem>
 					<MenuItem to="/cart" onClick={() => changeClick()}>
 						<CartIcon />
-						{cart.length > 0 && (
-							<p style={{ margin: "0" }}>({cartIconTotal()})</p>
-						)}
+						{cart.length > 0 && <CartCount>{cartIconTotal()}</CartCount>}
 					</MenuItem>
 				</Menu>
 			</NavbarWrapper>

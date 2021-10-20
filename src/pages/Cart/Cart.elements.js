@@ -13,6 +13,8 @@ export const CartWrapper = styled.div`
 	height: 100%;
 	background-color: lightgrey;
 	padding: 1rem;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+		rgba(0, 0, 0, 0.22) 0px 10px 10px;
 `;
 export const CartItemContents = styled.div`
 	display: flex;
@@ -50,8 +52,15 @@ export const CartButton = styled.button.attrs((props) => ({
 	border: 0;
 	font-family: monospace;
 	font-size: ${(props) => props.size};
+	box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+	transition: ease-out 0.3s all;
 	&:hover {
 		color: ${(props) => props.hoverColor};
+		box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+			rgba(0, 0, 0, 0.22) 0px 10px 10px;
+	}
+	&:active {
+		box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 	}
 `;
 

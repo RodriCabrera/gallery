@@ -4,6 +4,7 @@ import {
 	BuyerFormForm,
 	StyledLabel,
 	CheckoutButton,
+	StyledInput,
 } from "./BuyerForm.elements";
 
 const BuyerForm = ({ handleCheckout, orderId }) => {
@@ -51,15 +52,15 @@ const BuyerForm = ({ handleCheckout, orderId }) => {
 					<h3>Please fill out this form to place the order</h3>
 					<StyledLabel>
 						Name:
-						<input type="text" onChange={handleNameChange} />
+						<StyledInput type="text" onChange={handleNameChange} />
 					</StyledLabel>
 					<StyledLabel>
 						Email:
-						<input type="text" onChange={handleEmailChange} />
+						<StyledInput type="text" onChange={handleEmailChange} />
 					</StyledLabel>
 					<StyledLabel>
 						Telephone:
-						<input type="number" onChange={handleTelephoneChange} />
+						<StyledInput type="number" onChange={handleTelephoneChange} />
 					</StyledLabel>
 					{isBtnActive()}
 				</BuyerFormForm>

@@ -12,6 +12,8 @@ export const NavbarContainer = styled.div`
 	margin: 0;
 	background-color: white;
 	font-family: monospace;
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+		rgba(0, 0, 0, 0.22) 0px 10px 10px;
 `;
 export const NavbarWrapper = styled.div`
 	height: 100%;
@@ -93,5 +95,22 @@ export const CartIcon = styled(FiShoppingCart)`
 	@media screen and (max-width: 960px) {
 		color: white;
 		font-size: 2rem;
+	}
+`;
+export const CartCount = styled.div`
+	background-color: darkgrey;
+	margin-left: 2px;
+	margin-bottom: 25px;
+	/* font-size: 16px; */
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 25px;
+	height: 25px;
+	text-align: center;
+	transition: ease-out 0.3s all;
+	@media screen and (max-width: 960px) {
+		color: white;
 	}
 `;

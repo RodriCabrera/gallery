@@ -8,6 +8,7 @@ import {
 	DetailContainer,
 	DetailContent,
 	DetailImage,
+	ItemDetailPageWrapper,
 	DetailImageContainer,
 	DetailWrapper,
 	ItemDetailPageContainer,
@@ -24,41 +25,45 @@ const ItemDetail = ({ data }) => {
 			addToCart(data, quantity);
 		}
 	};
-
+	console.log(data);
 	return (
 		<>
 			<ItemDetailPageContainer>
 				<BackToArtworks to="/artworks">{"<"}Back to Artworks</BackToArtworks>
-				<DetailContainer>
-					<DetailWrapper>
-						<DetailImageContainer>
-							<DetailImage src={data.image} alt="caption" />
-						</DetailImageContainer>
-						<DetailContent>
-							<ItemInfo>
-								<h4>{data.titulo}</h4>
-								<h6>
-									{data.fecha} | {data.autor}
-								</h6>
-							</ItemInfo>
-							<BuyPrintsBox>
-								<h6>Buy Prints</h6>
-								<p>A4 Print Price: ${data.precio}</p>
+				<ItemDetailPageWrapper>
+					<DetailContainer>
+						<DetailWrapper>
+							<DetailImageContainer>
+								<a href={data.image} target="_blank" rel="noreferrer">
+									<DetailImage src={data.image} alt="caption" />
+								</a>
+							</DetailImageContainer>
+							<DetailContent>
+								<ItemInfo>
+									<h4>{data.titulo}</h4>
+									<h6>
+										{data.fecha} | {data.autor}
+									</h6>
+								</ItemInfo>
+								<BuyPrintsBox>
+									<h6>Buy Prints</h6>
+									<p>A4 Print Price: ${data.precio}</p>
 
-								{/* El ItemCount solamente trae la quantity. El botón de ADD TO CART (en este componente),
+									{/* El ItemCount solamente trae la quantity. El botón de ADD TO CART (en este componente),
 							tiene la lógica y el link*/}
-								<ItemCount setQuantity={setQuantity} />
-								{quantity > 0 && (
-									<>
-										<AddToCartButton to="/Cart" onClick={handleClick}>
-											ADD TO CART
-										</AddToCartButton>
-									</>
-								)}
-							</BuyPrintsBox>
-						</DetailContent>
-					</DetailWrapper>
-				</DetailContainer>
+									<ItemCount setQuantity={setQuantity} />
+									{quantity > 0 && (
+										<>
+											<AddToCartButton to="/Cart" onClick={handleClick}>
+												ADD TO CART
+											</AddToCartButton>
+										</>
+									)}
+								</BuyPrintsBox>
+							</DetailContent>
+						</DetailWrapper>
+					</DetailContainer>
+				</ItemDetailPageWrapper>
 			</ItemDetailPageContainer>
 		</>
 	);

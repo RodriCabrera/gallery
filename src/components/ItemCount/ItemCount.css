@@ -20,3 +20,13 @@ a {
 	text-decoration: none;
 	color: inherit;
 }
+.quantity-select {
+	background-color: black;
+	color: white;
+	font-size: 1.2rem;
+	font-family: monospace;
+	border: 0;
+	cursor: pointer;
+	padding: 5px;
+	border-radius: 5px;
+}

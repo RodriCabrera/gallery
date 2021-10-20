@@ -1,4 +1,5 @@
 import React from "react";
+import "./categories.css";
 
 const Categories = ({ categories, setSelectedCategory }) => {
 	const handleChange = (e) => {
@@ -7,6 +8,7 @@ const Categories = ({ categories, setSelectedCategory }) => {
 	return (
 		<>
 			<select
+				className="categories-select"
 				style={{ marginLeft: "1rem" }}
 				defaultValue=""
 				onChange={handleChange}

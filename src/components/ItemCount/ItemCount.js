@@ -24,7 +24,11 @@ const ItemCount = ({ setQuantity }) => {
 	return (
 		<div className="itemContainer">
 			<div className="quantity">
-				<select defaultValue="QUANTITY" onChange={handleChange}>
+				<select
+					className="quantity-select"
+					defaultValue="QUANTITY"
+					onChange={handleChange}
+				>
 					<option key={0} disabled>
 						QUANTITY
 					</option>
