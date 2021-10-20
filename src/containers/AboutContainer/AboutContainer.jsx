@@ -1,9 +1,9 @@
+import { Container, AboutHeading, AboutText } from "./About.elements";
 import React from "react";
-import { AboutContainer, AboutHeading, AboutText } from "./About.elements";
 
-const About = () => {
+const AboutContainer = () => {
 	return (
-		<AboutContainer>
+		<Container>
 			<AboutHeading>About Art Latin America</AboutHeading>
 			<AboutText>
 				The mission of ART LATIN AMERICA is to collect, study and create
@@ -19,8 +19,8 @@ const About = () => {
 				institutions and supporting innovative programs that focus on the visual
 				arts and Latin American culture.
 			</AboutText>
-		</AboutContainer>
+		</Container>
 	);
 };
 
-export default About;
+export default AboutContainer;

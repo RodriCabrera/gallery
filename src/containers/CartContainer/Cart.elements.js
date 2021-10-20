@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const CartContainer = styled.div`
+export const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	min-height: 60vh;
+	min-height: 70vh;
 	margin: 3rem;
 `;
 export const CartWrapper = styled.div`

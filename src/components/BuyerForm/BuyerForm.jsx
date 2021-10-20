@@ -7,10 +7,7 @@ import {
 	StyledInput,
 } from "./BuyerForm.elements";
 
-const BuyerForm = ({ handleCheckout, orderId }) => {
-	// const [buyerName, setBuyerName] = useState("");
-	// const [buyerTelephone, setBuyerTelephone] = useState("");
-	// const [buyerEmail, setBuyerEmail] = useState("");
+const BuyerForm = ({ handleCheckout }) => {
 	const [formState, setFormState] = useState({
 		name: "",
 		email: "",
@@ -18,16 +15,6 @@ const BuyerForm = ({ handleCheckout, orderId }) => {
 	});
 	const [emailCheck, setEmailCheck] = useState("");
 
-	// const handleNameChange = (e) => {
-	// 	// console.log(e.target.value);
-	// 	setBuyerName(e.target.value);
-	// };
-	// const handleEmailChange = (e) => {
-	// 	setBuyerEmail(e.target.value);
-	// };
-	// const handleTelephoneChange = (e) => {
-	// 	setBuyerTelephone(e.target.value);
-	// };
 	const handleChange = (e) => {
 		console.log(e.target.value);
 		setFormState((prevState) => ({
@@ -47,23 +34,15 @@ const BuyerForm = ({ handleCheckout, orderId }) => {
 	};
 
 	const isBtnActive = () => {
-		if (isDataIn() && isMailCorrect()) {
-			return (
-				<CheckoutButton
-					onClick={() => handleCheckout(formState)}
-					to={`/checkout/${orderId}`}
-				>
-					PLACE ORDER
-				</CheckoutButton>
-			);
-		} else
-			return (
-				<>
-					<CheckoutButton to={"#"} disabled>
-						PROCEED TO CHECKOUT
-					</CheckoutButton>
-				</>
-			);
+		return isDataIn() && isMailCorrect() ? (
+			<CheckoutButton onClick={() => handleCheckout(formState)}>
+				PLACE ORDER
+			</CheckoutButton>
+		) : (
+			<CheckoutButton to={"#"} disabled>
+				PROCEED TO CHECKOUT
+			</CheckoutButton>
+		);
 	};
 	return (
 		<>
@@ -105,9 +84,7 @@ const BuyerForm = ({ handleCheckout, orderId }) => {
 							value={emailCheck}
 							onChange={handleEmailCheck}
 						/>
-						{isMailCorrect() ? (
-							""
-						) : (
+						{!isMailCorrect() && (
 							<p style={{ color: "red" }}>Check your email</p>
 						)}
 					</StyledLabel>

@@ -5,7 +5,6 @@ import { Spinner } from "react-bootstrap";
 const ArtistsList = ({ data }) => {
 	const [artists, setArtists] = useState([]);
 	useEffect(() => {
-		// setArtists(data.map((elem) => elem.autor));
 		setArtists([...new Set(data.map((elem) => elem.autor))]);
 	}, [data]);
 	const mapArtists = () => {

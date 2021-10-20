@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const ItemDetailPageContainer = styled.div`
 	background-color: rgb(238, 238, 238);
 	padding-top: 2rem;
-	min-height: 100vh;
+	min-height: 80vh;
 `;
 export const ItemDetailPageWrapper = styled.div`
 	display: flex;
