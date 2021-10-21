@@ -14,19 +14,21 @@ El project fue creado con [Create React App](https://github.com/facebook/create-
 
 Una vez descargado el repositorio, se deben instalar las dependencias utlizadas mediante `npm install`, que en este caso fueron:
 
-"@testing-library/jest-dom": "^5.14.1",
-"@testing-library/react": "^11.2.7",
-"@testing-library/user-event": "^12.8.3",
-"bootstrap": "^5.1.0",
-"firebase": "^9.1.0", -----> Utilizazdo Firestore para el almacenamiento de las obras, las categorías y las órdenes de compra.
-"react": "^17.0.2",
-"react-bootstrap": "^2.0.0-beta.6", -----> Para el carousel del banner principal y el spinner de carga.
-"react-dom": "^17.0.2",
-"react-icons": "^4.2.0", ----> Para los iconos utilizados
-"react-masonry-css": "^1.0.16", -----> Para crear el display de la grilla de obras
-"react-router-dom": "^5.3.0",
-"react-scripts": "4.0.3",
-"styled-components": "^5.3.1" ----> Para darle estilo a los componentes.
+```
+	"@testing-library/jest-dom": "^5.14.1",
+	"@testing-library/react": "^11.2.7",
+	"@testing-library/user-event": "^12.8.3",
+	"bootstrap": "^5.1.0",
+	"firebase": "^9.1.0", -----> Utilizazdo Firestore para el almacenamiento de las obras, las categorías y las órdenes de compra.
+	"react": "^17.0.2",
+	"react-bootstrap": "^2.0.0-beta.6", -----> Para el carousel del banner principal y el spinner de carga.
+	"react-dom": "^17.0.2",
+	"react-icons": "^4.2.0", ----> Para los iconos utilizados
+	"react-masonry-css": "^1.0.16", -----> Para crear el display de la grilla de obras
+	"react-router-dom": "^5.3.0",
+	"react-scripts": "4.0.3",
+	"styled-components": "^5.3.1" ----> Para darle estilo a los componentes.
+```
 
 ### `npm start`
 
