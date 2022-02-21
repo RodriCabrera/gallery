@@ -1,29 +1,30 @@
 .wrapper {
-	height: 400px;
-	background-color: rgb(197, 197, 197);
+  height: 400px;
+  background-color: rgb(197, 197, 197);
 }
 .banner {
-	height: 400px;
-	overflow: hidden;
+  height: 400px;
+  overflow: hidden;
+  background-size: cover;
 }
 .banner-img {
-	width: 100%;
+  width: 100%;
 }
 .banner-header {
-	font-family: monospace;
-	text-align: start;
-	color: white;
-	margin-left: 4rem;
-	padding-top: 4rem;
-	width: 50%;
+  font-family: monospace;
+  text-align: start;
+  color: white;
+  margin-left: 4rem;
+  padding-top: 4rem;
+  width: 50%;
 }
 .banner1 {
-	background-image: url("https://www.bellasartes.gob.ar/media/uploads/coleccion/10684.jpg");
-	background-size: cover;
+  /* background-image: url("https://www.bellasartes.gob.ar/media/uploads/coleccion/10684.jpg"); */
+  background-size: cover;
 }
 .banner2 {
-	background-image: url("https://www.bellasartes.gob.ar/media/uploads/coleccion/7183.jpg");
+  background-image: url("https://www.bellasartes.gob.ar/media/uploads/coleccion/7183.jpg");
 }
 .banner3 {
-	background-image: url("https://www.bellasartes.gob.ar/media/uploads/coleccion/6833_e.jpg");
+  background-image: url("https://www.bellasartes.gob.ar/media/uploads/coleccion/6833_e.jpg");
 }
