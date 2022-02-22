@@ -43,7 +43,7 @@ const ItemDetail = ({ data }) => {
                   </h6>
                 </ItemInfo>
                 <BuyPrintsBox>
-                  <p>A4 Print Price: ${data.precio}</p>
+                  <p>Price: ${data.precio}</p>
 
                   {/* El ItemCount solamente trae la quantity. El botón de ADD TO CART (en este componente),
 							tiene la lógica y el link*/}

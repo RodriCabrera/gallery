@@ -49,9 +49,7 @@ const ItemListContainer = () => {
   }, []);
   return (
     <div style={{ backgroundColor: "rgb(238, 238, 238)" }}>
-      <h2 className="itemListContainer-title">
-        Featured Artworks (Buy A4 prints)
-      </h2>
+      <h2 className="itemListContainer-title">Featured Artworks</h2>
 
       <Categories
         categories={categories}
